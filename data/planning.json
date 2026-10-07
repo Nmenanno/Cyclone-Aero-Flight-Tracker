@@ -1,0 +1,402 @@
+{
+  "teams": [
+    {
+      "id": "program",
+      "name": "Program / Project Management",
+      "prefix": "PM"
+    },
+    {
+      "id": "aerodynamics",
+      "name": "Aerodynamics",
+      "prefix": "AERO"
+    },
+    {
+      "id": "structures",
+      "name": "Structures",
+      "prefix": "STR"
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical / Propulsion",
+      "prefix": "ELEC"
+    },
+    {
+      "id": "programming",
+      "name": "Programming / Autopilot",
+      "prefix": "PRG"
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "prefix": "MFG"
+    },
+    {
+      "id": "flight-test",
+      "name": "Flight Test",
+      "prefix": "FT"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "organization",
+      "title": "Program organization and ownership",
+      "target_date": "2026-09-25",
+      "end_date": "2026-09-25",
+      "requirements": [
+        "PM-001",
+        "PM-002",
+        "PM-003",
+        "PM-004",
+        "PM-005"
+      ],
+      "source_status": "DONE",
+      "reviewed": false
+    },
+    {
+      "id": "configuration",
+      "title": "Aircraft configuration freeze",
+      "target_date": "2026-09-29",
+      "end_date": "2026-09-29",
+      "requirements": [
+        "AERO-001",
+        "STR-001",
+        "PM-006"
+      ],
+      "source_status": "DONE",
+      "reviewed": false
+    },
+    {
+      "id": "interfaces",
+      "title": "Interface freeze / long-lead release",
+      "target_date": "2026-10-06",
+      "end_date": "2026-10-06",
+      "requirements": [
+        "PM-007",
+        "MFG-005"
+      ],
+      "source_status": "DONE",
+      "reviewed": false
+    },
+    {
+      "id": "design",
+      "title": "Structural design freeze / electrical readiness",
+      "target_date": "2026-10-13",
+      "end_date": "2026-10-13",
+      "requirements": [
+        "STR-007",
+        "ELEC-008",
+        "ELEC-009"
+      ],
+      "source_status": "ACTIVE",
+      "reviewed": false
+    },
+    {
+      "id": "validation",
+      "title": "Controls and propulsion validation",
+      "target_date": "2026-10-20",
+      "end_date": "2026-10-20",
+      "requirements": [
+        "ELEC-006",
+        "ELEC-007",
+        "ELEC-010",
+        "PRG-005"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "manufacturing",
+      "title": "Major manufacturing / dry-fit",
+      "target_date": "2026-11-08",
+      "end_date": "2026-11-08",
+      "requirements": [
+        "MFG-012",
+        "MFG-013",
+        "MFG-014",
+        "MFG-015"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "integration",
+      "title": "Aircraft assembly and integration",
+      "target_date": "2026-11-10",
+      "end_date": "2026-11-10",
+      "requirements": [
+        "ELEC-012",
+        "PRG-007",
+        "MFG-016"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "ground",
+      "title": "Ground-test closure / FRR",
+      "target_date": "2026-11-18",
+      "end_date": "2026-11-20",
+      "requirements": [
+        "FT-007",
+        "FT-008"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "flight",
+      "title": "Planned first flight",
+      "target_date": "2026-11-21",
+      "end_date": "2026-11-22",
+      "requirements": [
+        "FT-009"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "recovery",
+      "title": "Recovery window",
+      "target_date": "2026-11-24",
+      "end_date": "2026-11-25",
+      "requirements": [
+        "FT-009"
+      ],
+      "source_status": null,
+      "reviewed": false
+    },
+    {
+      "id": "fallback",
+      "title": "Absolute fallback",
+      "target_date": "2026-12-03",
+      "end_date": "2026-12-03",
+      "requirements": [
+        "FT-009"
+      ],
+      "source_status": null,
+      "reviewed": false
+    }
+  ],
+  "meetings": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "date": "2026-10-13",
+      "focus": "Flight-critical structural freeze and electrical readiness",
+      "version": 1
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "date": "2026-10-27",
+      "focus": "Manufacturing and cross-team blockers",
+      "version": 1
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "date": "2026-11-10",
+      "focus": "Assembly, integration and ground-test preparation",
+      "version": 1
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "date": "2026-11-24",
+      "focus": "First-flight results or recovery coordination",
+      "version": 1
+    }
+  ],
+  "readiness": [
+    {
+      "id": "R-01",
+      "title": "Configuration approved",
+      "task_ids": [
+        "PM-006",
+        "PM-007"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-02",
+      "title": "Primary airframe structurally inspected",
+      "task_ids": [
+        "FT-003"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-03",
+      "title": "Landing gear and fasteners inspected",
+      "task_ids": [
+        "FT-003"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-04",
+      "title": "Flight controls move correctly",
+      "task_ids": [
+        "FT-002"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-05",
+      "title": "Servo / linkage travel acceptable",
+      "task_ids": [
+        "ELEC-007",
+        "FT-002"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-06",
+      "title": "Radio range verified",
+      "task_ids": [
+        "FT-004"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-07",
+      "title": "Failsafe behavior verified",
+      "task_ids": [
+        "FT-004"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-08",
+      "title": "Installed electrical system checked",
+      "task_ids": [
+        "ELEC-012",
+        "FT-004"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-09",
+      "title": "Propulsion endurance completed",
+      "task_ids": [
+        "ELEC-010"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-10",
+      "title": "Installed full-power test completed",
+      "task_ids": [
+        "FT-005"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-11",
+      "title": "Final aircraft weight measured",
+      "task_ids": [
+        "FT-001"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-12",
+      "title": "Final CG within approved range",
+      "task_ids": [
+        "FT-001"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-13",
+      "title": "Taxi / ground handling completed",
+      "task_ids": [
+        "FT-006"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-14",
+      "title": "Autopilot validated or formally deferred safely",
+      "task_ids": [
+        "PRG-007"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-15",
+      "title": "Flight-test card approved",
+      "task_ids": [
+        "PM-009"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-16",
+      "title": "Pilot / crew assigned",
+      "task_ids": [
+        "PM-009",
+        "FT-008"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-17",
+      "title": "Test location confirmed",
+      "task_ids": [
+        "FT-008"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-18",
+      "title": "Weather limits established",
+      "task_ids": [
+        "PM-009",
+        "FT-008"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-19",
+      "title": "Abort criteria established",
+      "task_ids": [
+        "PM-009"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-20",
+      "title": "Flight-critical discrepancies resolved",
+      "task_ids": [
+        "FT-007"
+      ],
+      "status": "not_ready",
+      "version": 1
+    },
+    {
+      "id": "R-21",
+      "title": "Flight Readiness Review approved",
+      "task_ids": [
+        "FT-008"
+      ],
+      "status": "not_ready",
+      "version": 1
+    }
+  ]
+}

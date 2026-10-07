@@ -1,0 +1,2267 @@
+[
+  {
+    "id": "PM-001",
+    "source_order": 1,
+    "title": "Assign owners to every workstream",
+    "description": null,
+    "definition_of_done": "All workstreams have a n owner",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-09-24",
+    "baseline_target_date": "2026-09-24",
+    "recovery_date": "2026-09-26",
+    "absolute_date": "2026-09-28",
+    "raw_dates": {
+      "target": "Sep 24",
+      "recovery": "Sep 26",
+      "absolute": "Sep 28"
+    },
+    "dependencies": [],
+    "critical": false,
+    "priority_marked": false,
+    "status": "complete",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "PM-002",
+    "source_order": 2,
+    "title": "Freeze meeting cadence/reporting",
+    "description": null,
+    "definition_of_done": "Leads know when updates are due and how issues are escalated.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sept 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "complete",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "PM-003",
+    "source_order": 3,
+    "title": "Create interface ownership matrix",
+    "description": null,
+    "definition_of_done": "Every major physical/electrical interface has owners on both sides.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program Tech",
+    "primary_team_label": "Program Tech",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-29",
+    "baseline_target_date": "2026-10-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Oct 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [
+      "Target is after recovery; retained as printed pending confirmation"
+    ],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "MFG-001",
+    "source_order": 4,
+    "title": "Identify external manufacturing",
+    "description": null,
+    "definition_of_done": "Complete list of CNC/waterjet/laser/composite/sponsor/special processes.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-004",
+    "source_order": 5,
+    "title": "Create unresolved design decision list",
+    "description": null,
+    "definition_of_done": "Every unresolved decision has an owner and due date.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program Tech",
+    "primary_team_label": "Program Tech",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "MFG-002",
+    "source_order": 6,
+    "title": "Inventory existing material",
+    "description": null,
+    "definition_of_done": "On-hand quantity/condition known for major materials and hardware.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-003",
+    "source_order": 7,
+    "title": "Vendor/sponsor path to external items",
+    "description": null,
+    "definition_of_done": "Every external item has primary source, lead - time assumption and backup.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "MFG-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 3,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-004",
+    "source_order": 8,
+    "title": "Create procurement gap list",
+    "description": null,
+    "definition_of_done": "Every known required item has source, owner, date and status.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [
+      "program"
+    ],
+    "source_responsible_team": "Manufacturing/PMT",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [
+      "PMT"
+    ],
+    "phase": 1,
+    "target_date": "2026-10-05",
+    "baseline_target_date": "2026-10-05",
+    "recovery_date": "2026-10-07",
+    "absolute_date": "2026-10-09",
+    "raw_dates": {
+      "target": "Oct 5",
+      "recovery": "Oct 7",
+      "absolute": "Oct 9"
+    },
+    "dependencies": [
+      "MFG-001",
+      "MFG-002"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 4,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-005",
+    "source_order": 9,
+    "title": "Define minimum first-flight functionality",
+    "description": null,
+    "definition_of_done": "Document states what must be functional for first flight and what may be deferred.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 4,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "ELEC-002",
+    "source_order": 10,
+    "title": "Write thrust-test plan and acceptance criteria",
+    "description": null,
+    "definition_of_done": "Test plan covers prop/motor/ESC/battery, thrust, current, voltage, temperature and endurance.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 1,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "ELEC-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 4,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "AERO-001",
+    "source_order": 11,
+    "title": "Freeze aerodynamic geometry",
+    "description": null,
+    "definition_of_done": "Wing/canard/tail geometry is fixed enough for structure and mounts.",
+    "primary_team": "aerodynamics",
+    "secondary_teams": [],
+    "source_responsible_team": "Aerodynamics",
+    "primary_team_label": "Aerodynamics",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sep 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "STR-001",
+    "source_order": 12,
+    "title": "Freeze primary structural geometry",
+    "description": null,
+    "definition_of_done": "Primary structural envelope and load -path geometry are fixed.",
+    "primary_team": "structures",
+    "secondary_teams": [],
+    "source_responsible_team": "Structures",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sep 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-006",
+    "source_order": 13,
+    "title": "Conduct configuration freeze review",
+    "description": null,
+    "definition_of_done": "Major aircraft configuration approved for detailed release.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sep 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "AERO-001",
+      "STR-001",
+      "PM-004"
+    ],
+    "critical": true,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [
+      "Historical TODAY annotation removed from displayed definition",
+      "Target 2026-09-29 precedes predecessor PM-004 target 2026-10-04; confirm schedule"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-001",
+    "source_order": 14,
+    "title": "Define full electrical architecture",
+    "description": null,
+    "definition_of_done": "Power/data architecture identifies every major device, connector and power path.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sep 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "PM-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-001",
+    "source_order": 15,
+    "title": "Simulation readiness",
+    "description": null,
+    "definition_of_done": "Model parameters and first-flight software features are noted and planned",
+    "primary_team": "programming",
+    "secondary_teams": [],
+    "source_responsible_team": "Programming",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-09-29",
+    "baseline_target_date": "2026-09-29",
+    "recovery_date": "2026-10-01",
+    "absolute_date": "2026-10-03",
+    "raw_dates": {
+      "target": "Sep 29",
+      "recovery": "Oct 1",
+      "absolute": "Oct 3"
+    },
+    "dependencies": [
+      "AERO-001",
+      "STR-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-003",
+    "source_order": 16,
+    "title": "Thrust stand/test rig operational",
+    "description": null,
+    "definition_of_done": "Rig ready to roll",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Electrical / MFG",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [
+      "MFG"
+    ],
+    "phase": 2,
+    "target_date": "2026-09-04",
+    "baseline_target_date": "2026-09-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Sep 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "ELEC-002"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [
+      "Sep 4 target precedes its predecessor and plan start; retained pending confirmation",
+      "Target 2026-09-04 precedes predecessor ELEC-002 target 2026-10-06; confirm schedule"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-002",
+    "source_order": 17,
+    "title": "Define wing-to-structure interface",
+    "description": null,
+    "definition_of_done": "Hole pattern/fasteners/geometry/load path fully defined",
+    "primary_team": "structures",
+    "secondary_teams": [],
+    "source_responsible_team": "Structures",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-02",
+    "baseline_target_date": "2026-10-02",
+    "recovery_date": "2026-10-04",
+    "absolute_date": "2026-10-06",
+    "raw_dates": {
+      "target": "Oct 2",
+      "recovery": "Oct 4",
+      "absolute": "Oct 6"
+    },
+    "dependencies": [
+      "AERO-001",
+      "STR-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 5,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-003",
+    "source_order": 18,
+    "title": "Define servo mount, linkage and control- surface interfaces",
+    "description": null,
+    "definition_of_done": "Servo mounting, horn/linkage geometry and required travel are fixed .",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "structures"
+    ],
+    "source_responsible_team": "Electrical/STR",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [
+      "STR"
+    ],
+    "phase": 2,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "STR-001",
+      "ELEC-004"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-004",
+    "source_order": 19,
+    "title": "Define motor system struct interface",
+    "description": null,
+    "definition_of_done": "Mounting envelope, cooling, wiring, access and thrust line are defined.",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "structures"
+    ],
+    "source_responsible_team": "Propulsion/STR",
+    "primary_team_label": "Propulsion",
+    "secondary_team_labels": [
+      "STR"
+    ],
+    "phase": 2,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "STR-001",
+      "ELEC-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-005",
+    "source_order": 20,
+    "title": "Define landing-gear attachment and geometry",
+    "description": null,
+    "definition_of_done": "Gear mount geometry and fasteners ready for manufacturing.",
+    "primary_team": "structures",
+    "secondary_teams": [],
+    "source_responsible_team": "Structures",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "STR-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-004",
+    "source_order": 21,
+    "title": "Servo choice confirmed",
+    "description": null,
+    "definition_of_done": "Candidate servo chosen",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "structures"
+    ],
+    "source_responsible_team": "Electrical / Structures",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [
+      "Structures"
+    ],
+    "phase": 2,
+    "target_date": "2026-10-04",
+    "baseline_target_date": "2026-10-04",
+    "recovery_date": "2026-10-06",
+    "absolute_date": "2026-10-08",
+    "raw_dates": {
+      "target": "Oct 4",
+      "recovery": "Oct 6",
+      "absolute": "Oct 8"
+    },
+    "dependencies": [
+      "AERO-001"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-005",
+    "source_order": 22,
+    "title": "Final electrical BOM",
+    "description": null,
+    "definition_of_done": "All wire, connectors, regulators and distribution hardware identified and sourced .",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "ELEC-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-005",
+    "source_order": 23,
+    "title": "Order/secure long-lead materials",
+    "description": null,
+    "definition_of_done": "Orders placed or sponsor commitment confirmed; ETA recorded .",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "MFG-003",
+      "MFG-004"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-002",
+    "source_order": 24,
+    "title": "Working Simulink Simulation",
+    "description": null,
+    "definition_of_done": "Simulation runs with defined state/control interfaces.",
+    "primary_team": "programming",
+    "secondary_teams": [],
+    "source_responsible_team": "Programming",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "PRG-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-007",
+    "source_order": 25,
+    "title": "Conduct interface freeze review",
+    "description": null,
+    "definition_of_done": "Cross-team interfaces approved",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-06",
+    "baseline_target_date": "2026-10-06",
+    "recovery_date": "2026-10-08",
+    "absolute_date": "2026-10-10",
+    "raw_dates": {
+      "target": "Oct 6",
+      "recovery": "Oct 8",
+      "absolute": "Oct 10"
+    },
+    "dependencies": [
+      "PM-003",
+      "PM-006",
+      "STR-002",
+      "STR-003",
+      "STR-004",
+      "STR-005",
+      "ELEC-001"
+    ],
+    "critical": true,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 6,
+    "data_issues": [
+      "Target 2026-10-06 precedes predecessor PM-003 target 2026-10-29; confirm schedule"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-008",
+    "source_order": 26,
+    "title": "Publish initial manufacturing and integration sequence",
+    "description": null,
+    "definition_of_done": "Sequence identifies which subassemblies can be built/tested in parallel.",
+    "primary_team": "program",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Program/MFG",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [
+      "MFG"
+    ],
+    "phase": 2,
+    "target_date": "2026-10-11",
+    "baseline_target_date": "2026-10-11",
+    "recovery_date": "2026-10-13",
+    "absolute_date": "2026-10-15",
+    "raw_dates": {
+      "target": "Oct 11",
+      "recovery": "Oct 13",
+      "absolute": "Oct 15"
+    },
+    "dependencies": [
+      "PM-007"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 7,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "MFG-006",
+    "source_order": 27,
+    "title": "Create detailed in-house build sequence and shop plan",
+    "description": null,
+    "definition_of_done": "Sequence identifies tooling, machines, people, fixtures and predecessor work .",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 2,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "PM-008"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 7,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-006",
+    "source_order": 28,
+    "title": "Purchase flight-critical BOM",
+    "description": null,
+    "definition_of_done": "Flight-critical hardware/materials are identified and purchased.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-07",
+    "baseline_target_date": "2026-10-07",
+    "recovery_date": "2026-10-09",
+    "absolute_date": "2026-10-11",
+    "raw_dates": {
+      "target": "Oct 7",
+      "recovery": "Oct 9",
+      "absolute": "Oct 11"
+    },
+    "dependencies": [
+      "MFG-004",
+      "STR-002",
+      "STR-003",
+      "STR-004",
+      "STR-005"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-006",
+    "source_order": 29,
+    "title": "Run propulsion tests and verify",
+    "description": null,
+    "definition_of_done": "Candidate configurations tested at required operating points.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Propulsion",
+    "primary_team_label": "Propulsion",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-11",
+    "baseline_target_date": "2026-10-11",
+    "recovery_date": "2026-10-13",
+    "absolute_date": "2026-10-15",
+    "raw_dates": {
+      "target": "Oct 11",
+      "recovery": "Oct 13",
+      "absolute": "Oct 15"
+    },
+    "dependencies": [
+      "ELEC-002",
+      "ELEC-003"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-007",
+    "source_order": 30,
+    "title": "Bench test servo and verify",
+    "description": null,
+    "definition_of_done": "Candidate servo passes bench acceptance tests.",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "structures"
+    ],
+    "source_responsible_team": "Electrical / Structures",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [
+      "Structures"
+    ],
+    "phase": 3,
+    "target_date": "2026-10-11",
+    "baseline_target_date": "2026-10-11",
+    "recovery_date": "2026-10-13",
+    "absolute_date": "2026-10-15",
+    "raw_dates": {
+      "target": "Oct 11",
+      "recovery": "Oct 13",
+      "absolute": "Oct 15"
+    },
+    "dependencies": [
+      "ELEC-004"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-008",
+    "source_order": 31,
+    "title": "Build full skeleton harness",
+    "description": null,
+    "definition_of_done": "Battery, receiver, servos, ESC, autopilot/sensors interconnected on bench.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": null,
+    "baseline_target_date": null,
+    "recovery_date": "2026-10-09",
+    "absolute_date": "2026-10-13",
+    "raw_dates": {
+      "target": "Oct XX",
+      "recovery": "Oct 9",
+      "absolute": "Oct 13"
+    },
+    "dependencies": [
+      "ELEC-001",
+      "ELEC-004",
+      "ELEC-005"
+    ],
+    "critical": true,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [
+      "target deadline missing/invalid: Oct XX"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-009",
+    "source_order": 32,
+    "title": "Define electronics/autopilot mounting and wiring routes",
+    "description": null,
+    "definition_of_done": "Mount locations, access, connectors and cable routing are defined.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": null,
+    "baseline_target_date": null,
+    "recovery_date": "2026-10-09",
+    "absolute_date": "2026-10-13",
+    "raw_dates": {
+      "target": "Oct XX",
+      "recovery": "Oct 9",
+      "absolute": "Oct 13"
+    },
+    "dependencies": [
+      "PM-007",
+      "ELEC-001",
+      "STR-001"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [
+      "target deadline missing/invalid: Oct XX"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "STR-007",
+    "source_order": 33,
+    "title": "STR Design Freeze",
+    "description": null,
+    "definition_of_done": "Finalized STR released and prepared for full- fledged manufacturing.",
+    "primary_team": "structures",
+    "secondary_teams": [],
+    "source_responsible_team": "Structures",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "PM-007",
+      "STR-002",
+      "STR-003",
+      "STR-004",
+      "STR-005"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-007",
+    "source_order": 34,
+    "title": "Confirm all major materials on hand",
+    "description": null,
+    "definition_of_done": "Primary build materials received and inspected.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "MFG-005",
+      "STR-006"
+    ],
+    "critical": true,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 8,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-008",
+    "source_order": 35,
+    "title": "Fabricate/prepare datums and jigs",
+    "description": null,
+    "definition_of_done": "Flight-critical fixtures/templates ready before production steps need them .",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "MFG-006",
+      "STR-007"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 9,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-003",
+    "source_order": 36,
+    "title": "Proof of Simulink tuning",
+    "description": null,
+    "definition_of_done": "Basic stabilization/control laws run in simulation.",
+    "primary_team": "programming",
+    "secondary_teams": [],
+    "source_responsible_team": "Programming",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [],
+    "phase": 3,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "PRG-002"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 9,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-004",
+    "source_order": 37,
+    "title": "Establish X-Plane integration",
+    "description": null,
+    "definition_of_done": "State/action data exchange with X -Plane is reliable.",
+    "primary_team": "programming",
+    "secondary_teams": [],
+    "source_responsible_team": "Programming",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-13",
+    "baseline_target_date": "2026-10-13",
+    "recovery_date": "2026-10-15",
+    "absolute_date": "2026-10-17",
+    "raw_dates": {
+      "target": "Oct 13",
+      "recovery": "Oct 15",
+      "absolute": "Oct 17"
+    },
+    "dependencies": [
+      "PRG-002"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-010",
+    "source_order": 38,
+    "title": "Run endurance test",
+    "description": null,
+    "definition_of_done": "Flight propulsion system completes endurance run without thermal/electrical issue.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-18",
+    "baseline_target_date": "2026-10-18",
+    "recovery_date": "2026-10-20",
+    "absolute_date": "2026-10-22",
+    "raw_dates": {
+      "target": "Oct 18",
+      "recovery": "Oct 20",
+      "absolute": "Oct 22"
+    },
+    "dependencies": [
+      "ELEC-006"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-009",
+    "source_order": 39,
+    "title": "Manufacture lifting surfaces",
+    "description": null,
+    "definition_of_done": "Primary wing/canard structures complete and inspected.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-20",
+    "baseline_target_date": "2026-10-20",
+    "recovery_date": "2026-10-22",
+    "absolute_date": "2026-10-24",
+    "raw_dates": {
+      "target": "Oct 20",
+      "recovery": "Oct 22",
+      "absolute": "Oct 24"
+    },
+    "dependencies": [
+      "STR-007",
+      "MFG-007",
+      "MFG-008"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-005",
+    "source_order": 40,
+    "title": "Nominal and failure-case simulation test",
+    "description": null,
+    "definition_of_done": "Nominal and selected failure cases produce documented behavior.",
+    "primary_team": "programming",
+    "secondary_teams": [
+      "programming"
+    ],
+    "source_responsible_team": "Programming / Autopilot",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [
+      "Autopilot"
+    ],
+    "phase": 4,
+    "target_date": "2026-10-20",
+    "baseline_target_date": "2026-10-20",
+    "recovery_date": "2026-10-22",
+    "absolute_date": null,
+    "raw_dates": {
+      "target": "Oct 20",
+      "recovery": "Oct 22",
+      "absolute": "Oct 34"
+    },
+    "dependencies": [
+      "PRG-003",
+      "PRG-004"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [
+      "absolute deadline missing/invalid: Oct 34"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-010",
+    "source_order": 41,
+    "title": "Manufacture boom interfaces",
+    "description": null,
+    "definition_of_done": "Payload, V-stabs, landing gear",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-27",
+    "baseline_target_date": "2026-10-27",
+    "recovery_date": "2026-10-29",
+    "absolute_date": "2026-10-31",
+    "raw_dates": {
+      "target": "Oct 27",
+      "recovery": "Oct 29",
+      "absolute": "Oct 31"
+    },
+    "dependencies": [
+      "STR-007",
+      "MFG-007",
+      "MFG-008"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [
+      "Definition of Done is incomplete; administrator confirmation required"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-011",
+    "source_order": 42,
+    "title": "Manufacture control surfaces",
+    "description": null,
+    "definition_of_done": "Control surfaces installed mechanically with required travel and low binding.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-27",
+    "baseline_target_date": "2026-10-27",
+    "recovery_date": "2026-10-29",
+    "absolute_date": "2026-10-31",
+    "raw_dates": {
+      "target": "Oct 27",
+      "recovery": "Oct 29",
+      "absolute": "Oct 31"
+    },
+    "dependencies": [
+      "STR-003",
+      "STR-007",
+      "MFG-007",
+      "MFG-008"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-012",
+    "source_order": 43,
+    "title": "Receive and inspect all external parts",
+    "description": null,
+    "definition_of_done": "All required external parts ready for assembly.",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 4,
+    "target_date": "2026-10-27",
+    "baseline_target_date": "2026-10-27",
+    "recovery_date": "2026-10-29",
+    "absolute_date": "2026-10-31",
+    "raw_dates": {
+      "target": "Oct 27",
+      "recovery": "Oct 29",
+      "absolute": "Oct 31"
+    },
+    "dependencies": [
+      "MFG-003",
+      "MFG-005"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-013",
+    "source_order": 44,
+    "title": "Dry-fit of first available major interfaces",
+    "description": null,
+    "definition_of_done": "First available major interfaces physically fit; discrepancies discovered before final assembly.",
+    "primary_team": "structures",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Structures / \nManufacturing",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [
+      "Manufacturing"
+    ],
+    "phase": 4,
+    "target_date": "2026-10-31",
+    "baseline_target_date": "2026-10-31",
+    "recovery_date": "2026-11-02",
+    "absolute_date": "2026-11-04",
+    "raw_dates": {
+      "target": "Oct 31",
+      "recovery": "Nov 2",
+      "absolute": "Nov 4"
+    },
+    "dependencies": [
+      "MFG-009",
+      "MFG-010",
+      "MFG-011",
+      "MFG-012"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 10,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PM-009",
+    "source_order": 45,
+    "title": "Write first-flight test card and abort criteria",
+    "description": null,
+    "definition_of_done": "Test objectives, crew roles, sequence, limits and abort criteria documented.",
+    "primary_team": "program",
+    "secondary_teams": [],
+    "source_responsible_team": "Program",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [],
+    "phase": 5,
+    "target_date": "2026-10-30",
+    "baseline_target_date": "2026-10-30",
+    "recovery_date": "2026-11-01",
+    "absolute_date": "2026-11-03",
+    "raw_dates": {
+      "target": "Oct 30",
+      "recovery": "Nov 1",
+      "absolute": "Nov 3"
+    },
+    "dependencies": [
+      "PM-005"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [],
+    "requires_review": false,
+    "version": 1
+  },
+  {
+    "id": "PRG-006",
+    "source_order": 46,
+    "title": "Integrate autopilot hardware",
+    "description": null,
+    "definition_of_done": "Autopilot hardware communicates and commands bench system safely.",
+    "primary_team": "programming",
+    "secondary_teams": [
+      "programming"
+    ],
+    "source_responsible_team": "Programming / Autopilot",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [
+      "Autopilot"
+    ],
+    "phase": 5,
+    "target_date": "2026-10-27",
+    "baseline_target_date": "2026-10-27",
+    "recovery_date": "2026-10-29",
+    "absolute_date": "2026-10-31",
+    "raw_dates": {
+      "target": "Oct 27",
+      "recovery": "Oct 29",
+      "absolute": "Oct 31"
+    },
+    "dependencies": [
+      "PRG-005",
+      "ELEC-008"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-014",
+    "source_order": 47,
+    "title": "Complete major structural subassemblies",
+    "description": null,
+    "definition_of_done": "Wings, fuselage/booms, gear and controls are installation-ready subassemblies.",
+    "primary_team": "structures",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Structures / \nManufacturing",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [
+      "Manufacturing"
+    ],
+    "phase": 5,
+    "target_date": "2026-11-03",
+    "baseline_target_date": "2026-11-03",
+    "recovery_date": "2026-11-05",
+    "absolute_date": "2026-11-07",
+    "raw_dates": {
+      "target": "Nov 3",
+      "recovery": "Nov 5",
+      "absolute": "Nov 7"
+    },
+    "dependencies": [
+      "MFG-009",
+      "MFG-010",
+      "MFG-011",
+      "MFG-012",
+      "MFG-013"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-015",
+    "source_order": 48,
+    "title": "Structurally assemble aircraft",
+    "description": null,
+    "definition_of_done": "Primary airframe assembled and mechanically secure.",
+    "primary_team": "structures",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Structures / \nManufacturing",
+    "primary_team_label": "Structures",
+    "secondary_team_labels": [
+      "Manufacturing"
+    ],
+    "phase": 5,
+    "target_date": "2026-11-08",
+    "baseline_target_date": "2026-11-08",
+    "recovery_date": "2026-11-10",
+    "absolute_date": "2026-11-12",
+    "raw_dates": {
+      "target": "Nov 8",
+      "recovery": "Nov 10",
+      "absolute": "Nov 12"
+    },
+    "dependencies": [
+      "MFG-014"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-011",
+    "source_order": 49,
+    "title": "Install harness in aircraft",
+    "description": null,
+    "definition_of_done": "Installed electrical system matches controlled bench architecture and is serviceable.",
+    "primary_team": "electrical",
+    "secondary_teams": [],
+    "source_responsible_team": "Electrical",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [],
+    "phase": 5,
+    "target_date": null,
+    "baseline_target_date": null,
+    "recovery_date": "2026-11-10",
+    "absolute_date": "2026-11-12",
+    "raw_dates": {
+      "target": "Nov XX",
+      "recovery": "Nov 10",
+      "absolute": "Nov 12"
+    },
+    "dependencies": [
+      "MFG-015",
+      "ELEC-008",
+      "ELEC-009"
+    ],
+    "critical": false,
+    "priority_marked": true,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [
+      "target deadline missing/invalid: Nov XX"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "ELEC-012",
+    "source_order": 50,
+    "title": "Integrate propulsion and controls",
+    "description": null,
+    "definition_of_done": "Aircraft is physically complete enough for aircraft-level functional testing.",
+    "primary_team": "electrical",
+    "secondary_teams": [
+      "manufacturing"
+    ],
+    "source_responsible_team": "Electrical / MFG",
+    "primary_team_label": "Electrical",
+    "secondary_team_labels": [
+      "MFG"
+    ],
+    "phase": 5,
+    "target_date": "2026-11-10",
+    "baseline_target_date": "2026-11-10",
+    "recovery_date": "2026-11-12",
+    "absolute_date": "2026-11-14",
+    "raw_dates": {
+      "target": "Nov 10",
+      "recovery": "Nov 12",
+      "absolute": "Nov 14"
+    },
+    "dependencies": [
+      "MFG-015",
+      "ELEC-007",
+      "ELEC-010",
+      "ELEC-011"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "PRG-007",
+    "source_order": 51,
+    "title": "Ground-validate flight-ready autopilot configuration or formally defer",
+    "description": null,
+    "definition_of_done": "Either flight -ready software is validated for first flight",
+    "primary_team": "programming",
+    "secondary_teams": [
+      "programming"
+    ],
+    "source_responsible_team": "Programming / Autopilot",
+    "primary_team_label": "Programming",
+    "secondary_team_labels": [
+      "Autopilot"
+    ],
+    "phase": 5,
+    "target_date": "2026-11-10",
+    "baseline_target_date": "2026-11-10",
+    "recovery_date": "2026-11-12",
+    "absolute_date": "2026-11-14",
+    "raw_dates": {
+      "target": "Nov 10",
+      "recovery": "Nov 12",
+      "absolute": "Nov 14"
+    },
+    "dependencies": [
+      "PRG-006",
+      "ELEC-012"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 11,
+    "data_issues": [
+      "Definition of Done is incomplete; administrator confirmation required"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "MFG-016",
+    "source_order": 52,
+    "title": "Final assembly and configuration lock",
+    "description": null,
+    "definition_of_done": "Hardware, fasteners, wiring, controls and configuration documented before ground tests .",
+    "primary_team": "manufacturing",
+    "secondary_teams": [],
+    "source_responsible_team": "Manufacturing",
+    "primary_team_label": "Manufacturing",
+    "secondary_team_labels": [],
+    "phase": 5,
+    "target_date": "2026-11-11",
+    "baseline_target_date": "2026-11-11",
+    "recovery_date": "2026-11-13",
+    "absolute_date": "2026-11-15",
+    "raw_dates": {
+      "target": "Nov 11",
+      "recovery": "Nov 13",
+      "absolute": "Nov 15"
+    },
+    "dependencies": [
+      "MFG-015",
+      "ELEC-012",
+      "PRG-007"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 12,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-001",
+    "source_order": 53,
+    "title": "Measure final aircraft weight and CG",
+    "description": null,
+    "definition_of_done": null,
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 5,
+    "target_date": null,
+    "baseline_target_date": null,
+    "recovery_date": null,
+    "absolute_date": null,
+    "raw_dates": {
+      "target": null,
+      "recovery": null,
+      "absolute": null
+    },
+    "dependencies": [
+      "MFG-016"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 12,
+    "data_issues": [
+      "target deadline missing/invalid: not provided",
+      "recovery deadline missing/invalid: not provided",
+      "absolute deadline missing/invalid: not provided",
+      "Definition of Done not provided"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-002",
+    "source_order": 54,
+    "title": "Verify control directions, neutral positions and full deflections",
+    "description": null,
+    "definition_of_done": null,
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 5,
+    "target_date": null,
+    "baseline_target_date": null,
+    "recovery_date": null,
+    "absolute_date": null,
+    "raw_dates": {
+      "target": null,
+      "recovery": null,
+      "absolute": null
+    },
+    "dependencies": [
+      "MFG-016",
+      "ELEC-012"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 12,
+    "data_issues": [
+      "target deadline missing/invalid: not provided",
+      "recovery deadline missing/invalid: not provided",
+      "absolute deadline missing/invalid: not provided",
+      "Definition of Done not provided"
+    ],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-003",
+    "source_order": 55,
+    "title": "Structural, fastener and ground inspection",
+    "description": null,
+    "definition_of_done": "Airframe/gear/mounting hardware pass documented pre-ground-test inspection.",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 7,
+    "target_date": "2026-11-14",
+    "baseline_target_date": "2026-11-14",
+    "recovery_date": "2026-11-16",
+    "absolute_date": "2026-11-18",
+    "raw_dates": {
+      "target": "Nov 14",
+      "recovery": "Nov 16",
+      "absolute": "Nov 18"
+    },
+    "dependencies": [
+      "MFG-016"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-004",
+    "source_order": 56,
+    "title": "Perform radio range, failsafe and power- system checks",
+    "description": null,
+    "definition_of_done": "Range/failsafe/power behavior acceptable in installed configuration.",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 7,
+    "target_date": "2026-11-14",
+    "baseline_target_date": "2026-11-14",
+    "recovery_date": "2026-11-16",
+    "absolute_date": "2026-11-18",
+    "raw_dates": {
+      "target": "Nov 14",
+      "recovery": "Nov 16",
+      "absolute": "Nov 18"
+    },
+    "dependencies": [
+      "FT-002",
+      "ELEC-012"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-005",
+    "source_order": 57,
+    "title": "Perform full-power ground propulsion test",
+    "description": null,
+    "definition_of_done": "Aircraft survives representative full -power run without structural/electrical/thermal issue.",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 7,
+    "target_date": "2026-11-15",
+    "baseline_target_date": "2026-11-15",
+    "recovery_date": "2026-11-17",
+    "absolute_date": "2026-11-19",
+    "raw_dates": {
+      "target": "Nov 15",
+      "recovery": "Nov 17",
+      "absolute": "Nov 19"
+    },
+    "dependencies": [
+      "FT-003",
+      "FT-004",
+      "ELEC-010",
+      "ELEC-012"
+    ],
+    "critical": true,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-006",
+    "source_order": 58,
+    "title": "Perform taxi / ground handling tests",
+    "description": null,
+    "definition_of_done": "Steering/gear/braking/ground tracking acceptable at planned test speeds .",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 7,
+    "target_date": "2026-11-16",
+    "baseline_target_date": "2026-11-16",
+    "recovery_date": "2026-11-18",
+    "absolute_date": "2026-11-19",
+    "raw_dates": {
+      "target": "Nov 16",
+      "recovery": "Nov 18",
+      "absolute": "Nov 19"
+    },
+    "dependencies": [
+      "FT-001",
+      "FT-002",
+      "FT-005"
+    ],
+    "critical": true,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-007",
+    "source_order": 59,
+    "title": "Close all flight-critical discrepancies",
+    "description": null,
+    "definition_of_done": "No unresolved discrepancy blocks safe first flight; waivers/deferrals documented .",
+    "primary_team": "program",
+    "secondary_teams": [
+      "flight-test"
+    ],
+    "source_responsible_team": "Program / Flight Test",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [
+      "Flight Test"
+    ],
+    "phase": 7,
+    "target_date": "2026-11-18",
+    "baseline_target_date": "2026-11-18",
+    "recovery_date": "2026-11-19",
+    "absolute_date": "2026-11-20",
+    "raw_dates": {
+      "target": "Nov 18",
+      "recovery": "Nov 19",
+      "absolute": "Nov 20"
+    },
+    "dependencies": [
+      "FT-006",
+      "PRG-007"
+    ],
+    "critical": true,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-008",
+    "source_order": 60,
+    "title": "Conduct Flight Readiness Review",
+    "description": null,
+    "definition_of_done": "Go/no-go decision based on documented readiness, test card, crew/site/weather readiness .",
+    "primary_team": "program",
+    "secondary_teams": [
+      "flight-test"
+    ],
+    "source_responsible_team": "Program / Flight Test",
+    "primary_team_label": "Program",
+    "secondary_team_labels": [
+      "Flight Test"
+    ],
+    "phase": 7,
+    "target_date": "2026-11-18",
+    "baseline_target_date": "2026-11-18",
+    "recovery_date": "2026-11-19",
+    "absolute_date": "2026-11-20",
+    "raw_dates": {
+      "target": "Nov 18",
+      "recovery": "Nov 19",
+      "absolute": "Nov 20"
+    },
+    "dependencies": [
+      "FT-007",
+      "PM-009"
+    ],
+    "critical": true,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 13,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-009",
+    "source_order": 61,
+    "title": "Complete first test flight",
+    "description": null,
+    "definition_of_done": "Safe first flight completed and aircraft recovered.",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 8,
+    "target_date": "2026-11-21",
+    "baseline_target_date": "2026-11-21",
+    "recovery_date": "2026-11-25",
+    "absolute_date": "2026-12-03",
+    "raw_dates": {
+      "target": "Nov 21",
+      "recovery": "Nov 25",
+      "absolute": "Dec 3"
+    },
+    "dependencies": [
+      "FT-008"
+    ],
+    "critical": true,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 14,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  },
+  {
+    "id": "FT-010",
+    "source_order": 62,
+    "title": "Post-flight inspection and issue capture",
+    "description": null,
+    "definition_of_done": "Aircraft inspected; observations/data/issues converted into owned tasks .",
+    "primary_team": "flight-test",
+    "secondary_teams": [],
+    "source_responsible_team": "Flight Test",
+    "primary_team_label": "Flight Test",
+    "secondary_team_labels": [],
+    "phase": 8,
+    "target_date": "2026-11-22",
+    "baseline_target_date": "2026-11-22",
+    "recovery_date": "2026-11-26",
+    "absolute_date": "2026-12-04",
+    "raw_dates": {
+      "target": "Nov 22",
+      "recovery": "Nov 26",
+      "absolute": "Dec 4"
+    },
+    "dependencies": [
+      "FT-009"
+    ],
+    "critical": false,
+    "priority_marked": false,
+    "status": "not_started",
+    "owner_id": null,
+    "completed_at": null,
+    "source_page": 14,
+    "data_issues": [],
+    "requires_review": true,
+    "version": 1
+  }
+]
