@@ -27,9 +27,9 @@ Do not select an arbitrary first user. Refresh the app. Further memberships and 
 ## 3. GitHub Pages
 
 1. Repository → Settings → Secrets and variables → Actions → Variables: create `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
-2. Repository → Settings → Pages → Source: **GitHub Actions**.
+2. Pages has been configured with **GitHub Actions** as its source.
 3. Push to `main` or run **Validate and deploy flight tracker** under Actions.
-4. The workflow deliberately fails before deployment when either database value is missing. A source preview must not be presented as the operational tracker.
+4. The workflow runs tests and builds, but skips deployment when either database value is missing. A source preview must not be presented as the operational tracker.
 5. Verify `https://nmenanno.github.io/Cyclone-Aero-Flight-Tracker/` only after the deployment job succeeds. Hash routes make links such as `/#/team/structures` and `/#/task/STR-007` refresh correctly on Pages.
 
 ## 4. Hosted acceptance test

@@ -440,7 +440,11 @@ test("real PostgreSQL migrations and authorization workflows", async (t) => {
         async () =>
           cmd("readiness_item", {
             id: "R-02",
-            version: (await db.query("select version from public.flight_readiness_items where id = 'R-02'")).rows[0].version,
+            version: (
+              await db.query(
+                "select version from public.flight_readiness_items where id = 'R-02'",
+              )
+            ).rows[0].version,
             status: "approved",
             note: "Inspected",
           }),
@@ -451,7 +455,11 @@ test("real PostgreSQL migrations and authorization workflows", async (t) => {
         async () =>
           cmd("readiness_item", {
             id: "R-02",
-            version: (await db.query("select version from public.flight_readiness_items where id = 'R-02'")).rows[0].version,
+            version: (
+              await db.query(
+                "select version from public.flight_readiness_items where id = 'R-02'",
+              )
+            ).rows[0].version,
             status: "approved",
             note: "Inspected",
           }),
@@ -473,6 +481,99 @@ test("real PostgreSQL migrations and authorization workflows", async (t) => {
       assert.equal((await row(a)).data.target_date, "2026-10-15");
     },
   );
+  await t.test(
+    "milestone edits detect conflicts and keep countdown synchronized",
+    async () => {
+      await as(admin);
+      const payload = {
+        id: "flight",
+        version: 1,
+        title: "Planned first flight",
+        target_date: "2026-11-22",
+        end_date: "2026-11-22",
+        requirements: ["FT-009"],
+      };
+      await cmd("milestone", payload);
+      assert.equal(
+        (
+          await db.query(
+            "select flight_target::text from public.project_settings",
+          )
+        ).rows[0].flight_target,
+        "2026-11-22",
+      );
+      await assert.rejects(
+        () => cmd("milestone", payload),
+        /Milestone changed/,
+      );
+      await as(lead);
+      await assert.rejects(
+        () => cmd("milestone", { ...payload, version: 2 }),
+        /Director/,
+      );
+    },
+  );
+  await t.test(
+    "assigned sublead may update assigned work but cannot manage another task",
+    async () => {
+      await as(admin);
+      await cmd("edit_task", {
+        task_id: a,
+        version: (await row(a)).version,
+        data: { owner_id: sub },
+      });
+      await as(sub);
+      await cmd("update", { task_id: a, note: "Assigned sublead progress" });
+      await assert.rejects(
+        () => cmd("update", { task_id: b, note: "Unassigned task" }),
+        /permission/,
+      );
+    },
+  );
+  await t.test(
+    "explicit readiness approval invalidates when prerequisite work reopens",
+    async () => {
+      // Populate a disposable test fixture with all prerequisites already accepted.
+      await db.exec("reset role");
+      await db.exec("update public.tasks set status='complete'");
+      await as(admin);
+      for (const r of (
+        await db.query("select * from public.flight_readiness_items")
+      ).rows)
+        await cmd("readiness_item", {
+          id: r.id,
+          version: r.version,
+          status: "approved",
+          note: "Test fixture: documented condition accepted",
+        });
+      await cmd("readiness_decision", {
+        status: "approved",
+        note: "Test fixture: approved configuration and limits",
+      });
+      assert.equal(
+        (await db.query("select readiness_status from public.project_settings"))
+          .rows[0].readiness_status,
+        "approved",
+      );
+      await cmd("reopen", {
+        task_id: "STR-001",
+        version: (await row("STR-001")).version,
+        note: "New structural discrepancy",
+      });
+      assert.equal(
+        (await db.query("select readiness_status from public.project_settings"))
+          .rows[0].readiness_status,
+        "not_ready",
+      );
+      assert.equal(
+        (
+          await db.query(
+            "select status from public.flight_readiness_items where id='R-02'",
+          )
+        ).rows[0].status,
+        "not_ready",
+      );
+    },
+  );
   await db.close();
 });
-

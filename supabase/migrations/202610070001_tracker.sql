@@ -8,7 +8,7 @@ create table public.task_history(id bigint generated always as identity primary 
 create table public.deliverables(id uuid primary key,task_id text not null references public.tasks(id),submitted_by uuid not null references public.profiles(id),description text not null,reference text,file_path text,status text not null default 'submitted' check(status in ('submitted','approved','changes_requested','rejected')),review_note text,reviewer uuid references public.profiles(id),created_at timestamptz default now());
 create table public.extension_requests(id uuid primary key,task_id text not null references public.tasks(id),requested_by uuid references public.profiles(id),original_date date,requested_date date not null,reason text not null,progress text not null,recovery_action text not null,notes text,status text not null default 'pending' check(status in ('pending','approved','denied')),review_note text,reviewer uuid references public.profiles(id),created_at timestamptz default now());
 create unique index one_pending_extension on public.extension_requests(task_id) where status='pending';
-create table public.milestones(id text primary key,title text not null,target_date date not null,end_date date,requirements text[] not null default '{}',source_status text,reviewed boolean not null default false);
+create table public.milestones(id text primary key,title text not null,target_date date not null,end_date date,requirements text[] not null default '{}',source_status text,reviewed boolean not null default false,version integer not null default 1);
 create table public.meetings(id uuid primary key,date date not null,focus text not null default '',cancelled boolean not null default false,snapshot jsonb,finalized_at timestamptz,version integer not null default 1);
 create table public.meeting_notes(id uuid primary key,meeting_id uuid not null references public.meetings(id),task_id text references public.tasks(id),kind text not null check(kind in ('update','decision','action','blocker','discussed','carry')),body text not null,actor uuid references public.profiles(id),created_at timestamptz default now());
 create table public.meeting_agenda_items(meeting_id uuid references public.meetings(id),task_id text references public.tasks(id),primary key(meeting_id,task_id));
@@ -125,7 +125,7 @@ elsif p_action='create_task' then
  perform (obj->>'target_date')::date;
  if not public.is_admin() and (coalesce((obj->>'critical')::boolean,false) or exists(select 1 from public.tasks where id in(select jsonb_array_elements_text(coalesce(obj->'dependencies','[]'))) and (data->>'critical')::boolean)) then raise exception 'Director required for critical relationships';end if;
  update public.task_counters set next_number=next_number+1 where team_id=team returning next_number-1 into n;
- select prefix||'-'||lpad(n::text,3,'0') into target from public.teams where id=team;
+ select prefix||'-'||lpad(n::text,greatest(3,length(n::text)),'0') into target from public.teams where id=team;
  if target is null then raise exception 'Team counter not initialized';end if;
  obj:=jsonb_build_object('title',obj->>'title','description',obj->>'description','definition_of_done',obj->>'definition_of_done','target_date',obj->>'target_date','baseline_target_date',obj->>'target_date','recovery_date',nullif(obj->>'recovery_date',''),'absolute_date',nullif(obj->>'absolute_date',''),'phase',obj->>'phase','secondary_teams',coalesce(obj->'secondary_teams','[]'),'critical',coalesce((obj->>'critical')::boolean,false),'requires_review',coalesce((obj->>'critical')::boolean,false) or coalesce((obj->>'requires_review')::boolean,false),'data_issues','[]'::jsonb,'source_responsible_team',team);
  insert into public.tasks(id,primary_team,data) values(target,team,obj);
@@ -170,6 +170,7 @@ elsif p_action in ('meeting_note','finalize_meeting','edit_meeting') then
   insert into public.meeting_notes values(p_request,mid,target,p_payload->>'kind',note,auth.uid(),now());
   if target is not null then insert into public.meeting_agenda_items values(mid,target) on conflict do nothing;end if;
   if p_payload->>'kind'='carry' and target is not null then
+   if not exists(select 1 from public.meetings where date>m.date and not cancelled) then raise exception 'Schedule the next meeting before carrying an item forward';end if;
    insert into public.meeting_agenda_items select id,target from public.meetings where date>m.date and not cancelled order by date limit 1 on conflict do nothing;
   end if;
  elsif p_action='edit_meeting' then
@@ -194,8 +195,11 @@ elsif p_action='admin_role' then
  update public.profiles set is_admin=(p_payload->>'is_admin')::boolean where id=(p_payload->>'user_id')::uuid;
 elsif p_action='milestone' then
  if not public.is_admin() then raise exception 'Director required';end if;
+ select version into v from public.milestones where id=p_payload->>'id' for update;
+ if v is distinct from (p_payload->>'version')::integer then raise exception 'Milestone changed; refresh before saving';end if;
  if exists(select 1 from jsonb_array_elements_text(p_payload->'requirements') r where not exists(select 1 from public.tasks where id=r.value)) then raise exception 'Unknown milestone task';end if;
- update public.milestones set title=p_payload->>'title',target_date=(p_payload->>'target_date')::date,end_date=nullif(p_payload->>'end_date','')::date,requirements=array(select jsonb_array_elements_text(p_payload->'requirements')),reviewed=true where id=p_payload->>'id';
+ update public.milestones set title=p_payload->>'title',target_date=(p_payload->>'target_date')::date,end_date=nullif(p_payload->>'end_date','')::date,requirements=array(select jsonb_array_elements_text(p_payload->'requirements')),reviewed=true,version=version+1 where id=p_payload->>'id';
+ if p_payload->>'id'='flight' then update public.project_settings set flight_target=(p_payload->>'target_date')::date,readiness_status='not_ready',version=version+1;end if;
 elsif p_action='readiness_item' then
  if not public.is_admin() or note='' then raise exception 'Director and evidence required';end if;
  select version into v from public.flight_readiness_items where id=p_payload->>'id' for update;
@@ -232,4 +236,3 @@ grant execute on function public.is_admin(),public.is_member(),public.can_manage
 grant execute on function public.meeting_schedule() to anon,authenticated;
 grant execute on function public.register_profile(),public.command(text,jsonb,uuid) to authenticated;
 -- No client can execute check_dependencies directly.
-

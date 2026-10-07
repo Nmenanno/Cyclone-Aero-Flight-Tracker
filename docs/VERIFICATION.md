@@ -7,3 +7,7 @@ Covered: 62 tasks and exact checked statuses; unique IDs; valid normalized dates
 Build uses strict TypeScript and Vite. Browser review covers dashboard, direct team/task routes, meeting agenda, source uncertainty display, readiness state and responsive phone layout. The local preview is read-only because no Supabase project credentials have been provided.
 
 Hosted checks remain pending: deployed magic-link delivery/return, independent browser sessions observing shared changes, actual private file upload/download and signed-link expiry, Supabase-hosted RLS behavior, Pages deployment and live URL refresh. Production must not be declared ready until those checks pass.
+
+The initial GitHub run passed installation, source validation and database tests, then stopped at missing backend configuration. The workflow now separates that setup condition from code failures: CI can pass while deployment remains skipped. GitHub Pages is configured for Actions. The intended live URL returned HTTP 404 before backend setup.
+
+Latest local result: 27 automated checks passed, including explicit approval followed by readiness invalidation, assigned-sublead authorization, milestone conflict checks, countdown synchronization, and rejection of privileged frontend keys.

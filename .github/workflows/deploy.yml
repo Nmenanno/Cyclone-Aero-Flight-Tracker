@@ -13,6 +13,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      configured: ${{ steps.backend.outputs.configured }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -24,25 +26,31 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm validate && pnpm test
-      - name: Verify live backend configuration
+      - name: Check live backend configuration
+        id: backend
         env:
           SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           SUPABASE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
-            echo "::error::Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY repository variables. Production deployment must use the shared database."
-            exit 1
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Deployment is waiting for the Supabase URL and publishable key. Tests and build still run. No source preview will be published." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
       - run: pnpm build
         env:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
       - uses: actions/configure-pages@v5
+        if: steps.backend.outputs.configured == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.backend.outputs.configured == 'true'
         with:
           path: dist
   deploy:
     needs: build
+    if: needs.build.outputs.configured == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

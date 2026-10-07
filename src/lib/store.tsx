@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import seed from "../../data/first_flight_tasks.json";
 import planning from "../../data/planning.json";
 export type Row = Record<string, any>;
@@ -36,6 +36,7 @@ export const hydrate = (rows: Row[], deps: Row[]) =>
       .map((d) => d.predecessor_id),
   }));
 export function useStore() {
+  const generation = useRef(0);
   const [state, set] = useState<DataState>({
     tasks: [],
     teams: [],
@@ -56,6 +57,7 @@ export function useStore() {
     [error, setError] = useState(""),
     [loading, setLoading] = useState(true);
   const reload = useCallback(async () => {
+    const current = ++generation.current;
     try {
       if (!db) {
         set((s) => ({ ...s, ...planning, tasks: seed }));
@@ -65,6 +67,7 @@ export function useStore() {
       const {
         data: { session },
       } = await db.auth.getSession();
+      if (current !== generation.current) return;
       setUser(session?.user ?? null);
       if (session) {
         const r = await db.rpc("register_profile");
@@ -127,10 +130,12 @@ export function useStore() {
         ].forEach((k, i) => (next[k] = priv[i]));
         if (priv[8].length) next.meetings = priv[8];
       }
+      if (current !== generation.current) return;
       set(next as DataState);
       setError("");
       setLoading(false);
     } catch (e: any) {
+      if (current !== generation.current) return;
       setError(e.message ?? String(e));
       setLoading(false);
     }
@@ -140,7 +145,24 @@ export function useStore() {
     const timer = setInterval(reload, 15000);
     const focus = () => void reload();
     window.addEventListener("focus", focus);
-    const sub = db?.auth.onAuthStateChange(() => setTimeout(reload, 0));
+    const sub = db?.auth.onAuthStateChange((_event, session) => {
+      generation.current++;
+      setUser(session?.user ?? null);
+      if (!session)
+        set((old) => ({
+          ...old,
+          profiles: [],
+          memberships: [],
+          extensions: [],
+          deliverables: [],
+          history: [],
+          notes: [],
+          items: [],
+          notifications: [],
+          meetings: old.meetings.map(({ snapshot, ...meeting }) => meeting),
+        }));
+      setTimeout(reload, 0);
+    });
     return () => {
       clearInterval(timer);
       window.removeEventListener("focus", focus);

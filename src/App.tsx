@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
   useParams,
-  useNavigate,
+  useLocation,
 } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -93,6 +93,8 @@ export default function App() {
     [dialog, setDialog] = useState<Dialog | null>(null),
     [toast, setToast] = useState(""),
     [search, setSearch] = useState("");
+  const locationState=useLocation();
+  useEffect(()=>{setSearch('');window.scrollTo(0,0)},[locationState.pathname]);
   const open = (d: Dialog) => setDialog(d),
     message = (m: string) => {
       setToast(m);
@@ -213,7 +215,7 @@ export default function App() {
             )}
           </div>
         </header>
-        <main>
+        <main onClick={event=>{if(search&&(event.target as Element).closest('a[href^="#/"]'))setSearch('')}}>
           {s.preview && (
             <div className="notice">
               <AlertTriangle size={18} />
@@ -323,8 +325,8 @@ function PageHead({
 function Badge({ status }: { status: string }) {
   return <span className={"badge " + status}>{label(status)}</span>;
 }
-function Due({ task: t }: { task: Row }) {
-  const d = days(t.target_date);
+function Due({ task: t, asOf }: { task: Row; asOf?: string }) {
+  const d = days(t.target_date, asOf);
   return (
     <div className={"due " + (d !== null && d < 0 && active(t) ? "late" : "")}>
       <strong>{fmt(t.target_date)}</strong>
@@ -689,14 +691,14 @@ function Dashboard({ s }: Props) {
     </>
   );
 }
-function Compact({ t }: { t: Row }) {
+function Compact({ t, asOf }: { t: Row; asOf?: string }) {
   return (
     <Link to={taskUrl(t.id)} className="compact">
       <span>
         <small>{t.id}</small>
         <strong>{t.title}</strong>
       </span>
-      <Due task={t} />
+      <Due task={t} asOf={asOf} />
     </Link>
   );
 }
@@ -1518,7 +1520,31 @@ function Meetings({ s, open }: Props) {
     snapshot?.previous_date ??
     meetings.filter((x: Row) => x.date < m.date).at(-1)?.date ??
     "2026-09-22";
-  if (m.finalized_at && !snapshot) return <><PageHead eyebrow="MEETING HISTORY" title={fmt(m.date)+', 2026'} subtitle="This meeting has a preserved historical record."/><div className="notice">Sign in with team authorization to view its private snapshot and notes. Current tasks are not substituted for historical records.</div><select aria-label="Select meeting" value={m.id} onChange={e=>setSelected(e.target.value)}>{meetings.map((x:Row)=><option key={x.id} value={x.id}>{fmt(x.date)}</option>)}</select></>;
+  if (m.finalized_at && !snapshot)
+    return (
+      <>
+        <PageHead
+          eyebrow="MEETING HISTORY"
+          title={fmt(m.date) + ", 2026"}
+          subtitle="This meeting has a preserved historical record."
+        />
+        <div className="notice">
+          Sign in with team authorization to view its private snapshot and
+          notes. Current tasks are not substituted for historical records.
+        </div>
+        <select
+          aria-label="Select meeting"
+          value={m.id}
+          onChange={(e) => setSelected(e.target.value)}
+        >
+          {meetings.map((x: Row) => (
+            <option key={x.id} value={x.id}>
+              {fmt(x.date)}
+            </option>
+          ))}
+        </select>
+      </>
+    );
   const note = () =>
     open({
       title: "Meeting note",
@@ -1602,7 +1628,9 @@ function Meetings({ s, open }: Props) {
           : m.finalized_at
             ? "Finalized historical snapshot · " +
               new Date(m.finalized_at).toLocaleString()
-            : "Live agenda · updates as shared task records change."}{" "}
+            : s.preview
+              ? "Source-plan agenda · connect Supabase for live updates."
+              : "Live agenda · updates as shared task records change."}{" "}
         <span>Next meeting: {fmt(next)}. Time and room not set.</span>
       </div>
       {s.member && !m.finalized_at && !m.cancelled && (
@@ -1709,7 +1737,16 @@ function Meetings({ s, open }: Props) {
         }
       >
         {s.teams.map((team: Row) => {
-          const group = ag.filter((t: Row) => t.primary_team === team.id);
+          const requirements = ms
+            .filter((g: Row) => g.target_date >= m.date && g.target_date < next)
+            .flatMap((g: Row) => g.requirements);
+          const group = ag
+            .filter((t: Row) => t.primary_team === team.id)
+            .sort(
+              (a: Row, b: Row) =>
+                Number(requirements.includes(b.id)) -
+                Number(requirements.includes(a.id)),
+            );
           return group.length ? (
             <div className="agenda-team" key={team.id}>
               <h3>
@@ -1718,7 +1755,7 @@ function Meetings({ s, open }: Props) {
               </h3>
               {group.slice(0, full ? group.length : 3).map((t: Row) => (
                 <div className="agenda-row" key={t.id}>
-                  <Compact t={t} />
+                  <Compact t={t} asOf={snapshot?.as_of} />
                   <div className="badges">
                     <Badge status={t.status} />
                     {blockers(t, ts).length > 0 && (
@@ -1973,7 +2010,12 @@ function Timeline({ s, open }: Props) {
                               })),
                             },
                           ],
-                          submit: (v) => s.run("milestone", { id: m.id, ...v }),
+                          submit: (v) =>
+                            s.run("milestone", {
+                              id: m.id,
+                              version: m.version,
+                              ...v,
+                            }),
                         })
                       }
                     >
