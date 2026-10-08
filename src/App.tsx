@@ -103,6 +103,7 @@ export default function App() {
   const signIn = () =>
     open({
       title: "Sign in to your team",
+      button: "Send sign-in link",
       intro:
         "Use your email to receive a secure sign-in link. A director must authorize your account before you can change project records.",
       fields: [

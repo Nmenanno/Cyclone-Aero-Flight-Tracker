@@ -38,6 +38,7 @@ Use separate authorized test accounts and clearly labeled disposable tasks, not 
 
 ## Remaining external setup at handoff
 
-Supabase sign-in/project access, project creation, schema/seed application, auth/email setup, first Director bootstrap, public repository variables, successful Pages deployment and live multi-user verification must be completed before production use. See `VERIFICATION.md` for the distinction between local verified behavior and hosted checks.
+Completed: dedicated free Supabase project, both migrations and seed, sign-in redirects, public repository variables, successful Pages deployment, live public page and anonymous-access checks. Remaining: configure team email delivery (custom SMTP), sign in with the intended first Director account, bootstrap that verified account, and complete authenticated multi-user/file-upload acceptance checks. See `VERIFICATION.md` for the distinction between local verified behavior and hosted checks.
 
 References: [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Storage access control](https://supabase.com/docs/guides/storage/security/access-control), [Vite Pages deployment](https://vite.dev/guide/static-deploy.html).
+
