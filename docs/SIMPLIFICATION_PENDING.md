@@ -1,13 +1,9 @@
-# Shared-code tracker — ready for activation
+# Shared-code tracker activation
 
-The user chose a shared team code on October 8, 2026. This replaces email sign-in and Director setup for the everyday tracker.
+The user selected a shared team code and completed private database activation. Hosted checks verified that the selected code is accepted and an incorrect code is rejected. A no-change request against an already-completed task succeeded without changing its version or progress. Anonymous reads of team_access, profiles, deliverables and progress_receipts are denied. All 62 source tasks remain present.
 
-Prepared: team queues, search, details, Start / Mark done / Reopen, a shared-code unlock form, and server-side verification on every update. The code is held only in page memory and clears on refresh or Lock updates. It is not bundled in the website, committed to GitHub, or written to browser storage. Private files and profiles remain protected. Completion reports progress and never grants flight approval.
+The new interface has no email login or Director setup. It displays team task queues, details, search, and Start / Mark done / Reopen. The server verifies the code on every write. It is not stored in the public source, website bundle or browser storage. Refreshing the page clears it.
 
-Validation: all 28 automated checks and the production build pass. Tests cover missing/wrong codes, correct-code updates, code rotation invalidating old requests, private table denial, conflict detection, idempotency and dependency blocking. Desktop layout reviewed before adding the unlock form; browser connection became unavailable during activation (three timeouts).
+28 automated checks and the production build passed. The desktop layout was reviewed before activation. Browser automation was unavailable during final publication, so a final live UI unlock/click check remains unverified. Hosted API checks and the deployment pipeline provide the recorded verification for this release.
 
-Not yet done: hosted migration, code activation, shared-code UI verification, and Pages deployment. Do not publish the new frontend until the database change is applied.
-
-A private activation file exists one directory above this repository as ACTIVATE_TEAM_CODE_PRIVATE.sql. It contains the migration and salted verifier for the selected code. Keep it out of GitHub. In the dedicated Supabase project SQL Editor, paste and run that file once. Do not rerun initial migrations or the source seed. The browser credential policy requires the user to perform the credential entry/submission.
-
-After activation: verify a wrong code is denied; verify the selected code unlocks; use a disposable fixture or a transaction rolled back in SQL to check completion without changing actual engineering progress; publish the branch and check the live website. Update README and lead guide for this simpler flow.
+The private activation SQL file is outside the repository and must not be committed. Do not rerun it after successful activation.
