@@ -4,7 +4,7 @@ A shared project tracker for Iowa State Cyclone Aero Design's November 21, 2026 
 
 **Repository:** https://github.com/Nmenanno/Cyclone-Aero-Flight-Tracker
 
-**Production status:** Not yet deployed. Supabase sign-in and project configuration are required. Intended URL: `https://nmenanno.github.io/Cyclone-Aero-Flight-Tracker/`. Do not use a local source-plan preview as live team progress.
+**Production status:** Supabase schema and all 62 tasks are imported; authentication redirects and GitHub deployment variables are configured. First connected deployment and hosted sign-in verification are in progress. Intended URL: `https://nmenanno.github.io/Cyclone-Aero-Flight-Tracker/`. Do not use a local source-plan preview as live team progress.
 
 ## Run locally
 
@@ -63,3 +63,4 @@ All 62 corrected IDs and dependencies are preserved. Only PM-001 and PM-002 are 
 The app does not calculate a mathematical critical path, and it does not automatically authorize flight. The readiness checklist requires evidence and explicit Director decisions.
 
 Further reading: [Lead guide](docs/LEAD_GUIDE.md) · [Admin guide](docs/ADMIN_GUIDE.md) · [Architecture](docs/ARCHITECTURE.md) · [Database](docs/DATABASE.md) · [Verification](docs/VERIFICATION.md).
+

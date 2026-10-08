@@ -11,3 +11,5 @@ Hosted checks remain pending: deployed magic-link delivery/return, independent b
 The initial GitHub run passed installation, source validation and database tests, then stopped at missing backend configuration. The workflow now separates that setup condition from code failures: CI can pass while deployment remains skipped. GitHub Pages is configured for Actions. The intended live URL returned HTTP 404 before backend setup.
 
 Latest local result: 27 automated checks passed, including explicit approval followed by readiness invalidation, assigned-sublead authorization, milestone conflict checks, countdown synchronization, and rejection of privileged frontend keys.
+
+Hosted setup: applied both schema/storage migrations and seed to the dedicated Supabase project. The public Data API returns 62 tasks with exactly two recorded completions. Production and local authentication redirects and both public GitHub repository variables are saved. Email delivery, first Director setup and authenticated multi-user acceptance remain pending.
