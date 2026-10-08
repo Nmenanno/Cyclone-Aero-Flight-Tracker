@@ -1407,3 +1407,346 @@ footer {
     color: #222;
   }
 }
+
+/* The everyday tracker: one compact task queue per team. */
+.simple-app {
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+.simple-header {
+  background: white;
+  border-bottom: 1px solid #e4e6eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px max(24px, calc((100vw - 1240px) / 2));
+  gap: 24px;
+}
+.simple-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.simple-brand > svg {
+  color: #9d1535;
+  width: 34px;
+  height: 34px;
+}
+.simple-brand small {
+  display: block;
+  font-size: 10px;
+  color: #65717e;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+.simple-main {
+  max-width: 1288px;
+  padding: 40px 24px;
+  margin: auto;
+}
+.simple-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+.simple-heading h1 {
+  margin: 8px 0 10px;
+}
+.simple-count {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 18px 24px;
+  border: 1px solid #e2e5ea;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.simple-count strong {
+  font-size: 27px;
+}
+.simple-count span {
+  color: #65717e;
+}
+.simple-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.simple-filters a {
+  padding: 9px 14px;
+  border: 1px solid #dddfe5;
+  border-radius: 24px;
+  background: white;
+}
+.simple-filters a.selected {
+  background: #9d1535;
+  color: white;
+  border-color: #9d1535;
+}
+.simple-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 28px;
+  background: white;
+  border: 1px solid #dddfe5;
+  border-radius: 8px;
+  padding: 0 14px;
+  max-width: 480px;
+}
+.simple-search input {
+  border: 0;
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+}
+.simple-teams {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.simple-team {
+  background: #fff;
+  border: 1px solid #e1e4e9;
+  border-radius: 14px;
+  padding: 20px;
+}
+.simple-team-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 18px;
+}
+.simple-team-title span {
+  font-size: 12px;
+  white-space: nowrap;
+  color: #65717e;
+}
+.simple-caption {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 750;
+  color: #9d1535;
+  margin-bottom: 12px;
+}
+.simple-task {
+  padding: 16px;
+  border: 1px solid #e2e5e9;
+  border-radius: 10px;
+  background: #fcfcfd;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.simple-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  color: #63707b;
+  margin-bottom: 10px;
+}
+.simple-meta a {
+  font-weight: 750;
+  letter-spacing: 0.5px;
+}
+.simple-meta span {
+  font-weight: 650;
+}
+.simple-meta .late {
+  color: #a32828;
+}
+.simple-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1d2836;
+}
+.simple-title:hover {
+  text-decoration: underline;
+}
+.simple-state {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #68717f;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+.simple-task details {
+  font-size: 12px;
+  color: #63707b;
+}
+.simple-task summary {
+  cursor: pointer;
+  padding: 6px 0;
+}
+.simple-task details p {
+  margin: 9px 0;
+}
+.simple-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.simple-actions button {
+  border: 1px solid #d6dbe3;
+  background: white;
+  padding: 8px 11px;
+  border-radius: 7px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.simple-actions .done-button {
+  background: #9d1535;
+  color: white;
+  border-color: #9d1535;
+}
+.simple-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.simple-task.is-done {
+  background: #f5faf6;
+}
+.simple-task.is-done .simple-state {
+  color: #247046;
+}
+.other-tasks > summary {
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+}
+.team-link {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 12px;
+  color: #9d1535;
+  font-weight: 650;
+}
+.simple-empty {
+  font-size: 13px;
+  margin: 12px 0;
+}
+.dependency-link {
+  display: block;
+  text-decoration: underline;
+  margin: 7px 0;
+}
+.back-link {
+  display: block;
+  margin-bottom: 20px;
+}
+.simple-main > .simple-task {
+  max-width: 750px;
+}
+.simple-footer {
+  border: 0;
+  padding: 35px 0 0;
+  display: block;
+  font-size: 12px;
+  color: #717987;
+}
+@media (max-width: 1050px) {
+  .simple-teams {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .simple-teams {
+    grid-template-columns: 1fr;
+  }
+  .simple-header {
+    padding: 18px;
+  }
+  .simple-main {
+    padding: 26px 16px;
+  }
+  .simple-heading {
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .simple-heading h1 {
+    font-size: 25px;
+  }
+  .simple-count {
+    padding: 12px;
+    font-size: 11px;
+  }
+  .simple-count strong {
+    font-size: 22px;
+  }
+  .simple-brand {
+    font-size: 12px;
+  }
+  .simple-header > a:last-child {
+    font-size: 12px;
+  }
+  .simple-team {
+    padding: 17px;
+  }
+  .simple-filters a {
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+}
+
+.simple-filters {
+  flex-direction: row;
+}
+.simple-filters a {
+  width: auto;
+}
+
+.team-unlock {
+  background: #fff;
+  border: 1px solid #e1e4e9;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+.team-unlock form,
+.team-unlock > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.team-unlock > span {
+  display: inline-flex;
+  margin-right: 20px;
+  color: #247046;
+}
+.team-unlock label {
+  font-weight: 650;
+}
+.team-unlock p {
+  color: #a32828;
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .team-unlock label {
+    width: 100%;
+  }
+  .team-unlock input {
+    min-width: 0;
+    flex: 1;
+  }
+}
